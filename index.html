@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>YUN YANG 雲漾｜2026 靈魂年度導航全書</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;500;700&display=swap');
+        :root { --雲漾金: #d4b483; --背景黑: #0d0c0b; --卡片黑: #1c1916; --線條金: rgba(212, 180, 131, 0.2); --特惠紅: #c44d4d; --提示藍: #7ba2b0; }
+        body { background: var(--背景黑); font-family: 'Noto Serif TC', serif; color: #e0e0e0; margin: 0; line-height: 2.5; overflow-x: hidden; }
+        .光暈 { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 5%, #25211d 0%, var(--背景黑) 100%); z-index: -1; }
+        .容器 { max-width: 800px; margin: 0 auto; padding: 60px 20px; box-sizing: border-box; }
+        .品牌標誌 { width: 150px; display: block; margin: 0 auto 10px; filter: drop-shadow(0 0 10px rgba(212,180,131,0.3)); }
+        h1 { text-align: center; color: var(--雲漾金); letter-spacing: 8px; font-weight: 300; margin-bottom: 50px; font-size: 26px; }
+        
+        .啟動區 { text-align: center; margin-bottom: 60px; padding: 45px; border: 1px solid var(--線條金); background: rgba(0,0,0,0.4); border-radius: 2px; }
+        .輸入組 { margin-bottom: 25px; }
+        .標籤 { display: block; color: var(--雲漾金); font-size: 13px; letter-spacing: 3px; margin-bottom: 10px; }
+        input { background: none; border: none; border-bottom: 2px solid var(--線條金); font-size: 20px; width: 280px; text-align: center; color: #fff; outline: none; padding: 10px; transition: 0.4s; }
+        input:focus { border-bottom: 2px solid var(--雲漾金); }
+        .主按鈕 { background: var(--雲漾金); color: #2a2218; border: none; padding: 18px 70px; font-size: 17px; font-weight: 700; cursor: pointer; margin-top: 35px; border-radius: 1px; letter-spacing: 3px; width: 100%; max-width: 320px; transition: 0.3s; }
+
+        #報告區域 { display: none; }
+        .章節卡片 { background: var(--卡片黑); border: 1px solid var(--線條金); padding: 50px; margin-bottom: 45px; border-radius: 1px; animation: slideUp 0.8s ease-out; position: relative; }
+        .尊享標籤 { position: absolute; top: 20px; right: 20px; background: var(--雲漾金); color: #000; font-size: 11px; padding: 4px 12px; font-weight: bold; letter-spacing: 2px; }
+        .章節標題 { color: var(--雲漾金); font-size: 22px; border-bottom: 1px solid var(--線條金); padding-bottom: 20px; margin-bottom: 30px; letter-spacing: 5px; display: flex; justify-content: space-between; }
+        .序號 { font-size: 13px; opacity: 0.4; }
+        .子標題 { color: var(--雲漾金); font-weight: 700; margin-top: 40px; display: block; font-size: 18px; border-left: 4px solid var(--雲漾金); padding-left: 18px; letter-spacing: 2px; margin-bottom: 10px; }
+        .解析本文 { font-size: 16.5px; color: #d5d5d5; text-align: justify; line-height: 2.5; white-space: pre-wrap; margin-bottom: 20px; }
+
+        .效率診斷 { margin: 30px 0; padding: 25px; border: 1px solid var(--線條金); background: rgba(212, 180, 131, 0.05); }
+        .效率條外 { height: 8px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; margin: 15px 0; }
+        .效率條內 { height: 100%; background: linear-gradient(90deg, #8a6d3b, var(--雲漾金)); transition: width 2s ease-in-out; }
+
+        .金字塔視覺 { display: flex; flex-direction: column; align-items: center; margin: 40px 0; }
+        .塔層 { display: flex; margin-bottom: 15px; }
+        .塔點 { width: 45px; height: 45px; line-height: 45px; text-align: center; border: 1px solid var(--線條金); border-radius: 50%; margin: 0 10px; font-size: 16px; color: var(--雲漾金); background: rgba(0,0,0,0.2); }
+        .核心點 { background: var(--雲漾金); color: #2a2218; font-weight: bold; transform: scale(1.15); box-shadow: 0 0 25px rgba(212,180,131,0.5); }
+
+        .支付牆 { background: rgba(28, 25, 22, 0.98); border: 1px solid var(--雲漾金); padding: 55px 35px; box-shadow: 0 10px 80px rgba(0,0,0,1); width: 100%; box-sizing: border-box; margin-top: 20px; }
+        .現價 { font-size: 42px; color: #fff; font-weight: bold; letter-spacing: 2px; display: block; margin: 20px 0; }
+        .折抵提醒 { background: rgba(212, 180, 131, 0.1); color: var(--雲漾金); padding: 15px; font-size: 14.5px; margin-top: 15px; border: 1px dashed var(--雲漾金); text-align: center; }
+
+        .水晶卡片 { background: rgba(212, 180, 131, 0.05); border-left: 3px solid var(--雲漾金); padding: 25px; margin-top: 25px; }
+        .水晶標題 { color: var(--雲漾金); font-weight: bold; font-size: 19px; display: block; margin-bottom: 10px; }
+        .按鈕 { text-decoration: none; text-align: center; padding: 22px; border: 1px solid var(--雲漾金); color: var(--雲漾金); font-size: 17px; font-weight: 600; cursor: pointer; display: block; letter-spacing: 3px; transition: 0.4s; }
+        .按鈕.強調 { background: var(--雲漾金); color: #2a2218; border: none; }
+
+        @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+<div class="光暈"></div>
+<div class="容器">
+    <img src="IMG_0238.jpeg" alt="YUN YANG" class="品牌標誌">
+    <h1>2026 靈魂年度導航全書</h1>
+    <div class="啟動區" id="inputSection">
+        <div class="輸入組"><span class="標籤">您的尊稱</span><input type="text" id="姓名" placeholder="例：林小明"></div>
+        <div class="輸入組"><span class="標籤">電子信箱 (接收旗艦版全書用)</span><input type="email" id="電子信箱" placeholder="example@gmail.com"></div>
+        <div class="輸入組"><span class="標籤">LINE ID</span><input type="text" id="LINE" placeholder="以便主理人親自與您對接"></div>
+        <div class="輸入組"><span class="標籤">西元生日 8 碼</span><input type="tel" id="生日碼" placeholder="YYYYMMDD" maxlength="8"></div>
+        <button class="主按鈕" onclick="啟動解析()">啟動 2026 年度靈魂校準</button>
+    </div>
+    <div id="報告區域"></div>
+</div>
+
+<script>
+    const webAppUrl = "https://script.google.com/macros/s/AKfycby_oqXZqbUmdF10qPK-xy1IJnWsq5O_ma7uJE6vU3wD7qIAqldJkQCo9pFXRHeHpuJA/exec";
+    const ECPayURL = "https://p.ecpay.com.tw/28F4276";
+
+    function 加法(n) { 
+        let s = n.toString().split('').map(Number).reduce((a, b) => a + b, 0); 
+        return s > 9 ? 加法(s) : (s || 9); 
+    }
+
+    // --- 【深度資料庫：100字+優雅描述】 ---
+    const SoulDB = {
+        1: { 
+            name: "星金淬鍊者", el: "metal", q: "如何透過核心秩序，將靈感轉化為絕對的顯化實力？", 
+            a: "您的靈魂天生具備『精準』與『開創』的代碼。星金淬鍊者在2026丙午火年，正經歷一場華麗的能量洗禮。火的能量雖熱烈，卻能協助您的金屬意志去除雜質。這一年，您不是要抵擋改變，而是要透過建立更細緻的底層系統，讓您的能量轉化為不可撼動的專業權威。當您不再盲目追求速度，而是專注於「頻率對齊」時，您的生活將展現出前所未有的秩序感與豐盛。這是一場關於「內在韌性」的深度顯化之路。",
+            plus: "您擁有極強的結構化思維與點石成金的執行力。在眾人感到混亂的時刻，您是那個能保持冷靜、梳理出清晰藍圖的核心人物。您的紀律感不僅是行為，更是一種能讓周圍人感到安心的穩定氣場。",
+            shadows: "對完美的極致要求有時會成為您的枷鎖，讓您在面對突發變動時感到短暫的失衡。在2026年，學會擁抱「流動的計畫」將是您的課題，這能讓您的星金能量變得更加靈活且具備擴張性。",
+            env: "高度專業、具備美感與明確邊界的空間最能激發您的效率。適合在能掌控細節的環境中運作，遠離過度情緒化的噪音，這能確保您的靈魂頻率始終處於最高頻的校準狀態。",
+            lead: "您的領導是一種「智慧的垂範」。透過設立完美的標準與透明的規則，讓團隊在您的秩序中自然運轉。您不需要大聲疾呼，您的成果本身就是最優雅、最無懈可擊的證明。",
+            view: "直擊事物本質的清晰視野。當他人還在糾結表象時，您的靈魂已經看見了價值的核心與潛在的躍升點。這種「透視未來」的天賦，是您在2026年建立版圖的重要門票。",
+            hook: "星金遇火年，這是一場關於「權限更迭」與「資產重組」的優雅轉身。透過專屬水晶的輔助，您將能平穩接引火年的紅利，實現跨維度的飛躍。",
+            crystals: [{n:"黑銀鈦", m:"強效守護領導核心，協助您在複雜決策中排除外界干擾，穩固能量場。"},{n:"白水晶簇", m:"每日校準思緒頻率，清理負面情緒積累，讓靈感在最高頻的空間中綻放。"}]
+        },
+        // ... (其他號人內容依照此規格擴充)
+        8: { 
+            name: "烈焰領袖者", el: "fire", q: "當權力與靈魂共振，如何以豐盛之姿引領全新的生命版圖？", 
+            a: "您攜帶著最熾熱的顯化密碼，是天生的資源調度者。烈焰領袖者的靈魂使命，在於將願景轉化為真實的影響力。2026丙午火年，外在的火能量將與您的核心共振，這是一個加速顯化的「超級年度」。這一年，您的關鍵在於「爐灶的深耕」——唯有在穩定且優雅的結構中，您的火能量才能轉化為溫暖且持久的太陽，而非短暫爆發的火焰。當您學會借力使力，將發現資源會以前所未有的速度向您匯聚。",
+            plus: "具備無與倫比的磁吸力與商業洞察力。您能輕易在複雜的市場中識別出獲利最輕鬆的槓桿點，並具備整合各方資源的能力。您的存在感本身就是一種極強的領導能量。",
+            shadows: "因為對目標的強烈渴望，有時會陷入事必躬親的疲憊陷阱。2026年，學習「授權」與「信任」是您的能量必修課，這能讓您的事業在放手中獲得更大規模的擴張與躍升。",
+            env: "您需要具備擴張感、高度自主權且具備奢華質感的舞台。狹隘或官僚的環境會束縛您的創造力。一個能展現您野心與美感的空間，是您靈魂補給能量的充電站。",
+            lead: "以人為本，創造倍數級的顯化價值。您的領導風格極具感染力，能點燃團隊成員心中的熱情，讓他們在追求共同目標的過程中，同時實現自我價值的突破。",
+            view: "您看見的是「整體的能量版圖」。在他人還在討論利潤時，您已經看見了未來的品牌地位與資源佈局。這種全局觀讓您在2026年能做出極具遠見的重大決策。",
+            hook: "雙火共振之年，這是您人生中每九年一度的「顯化收成年」。透過落地全書的導航，您將掌握如何精準收割過去七年的累積，實現財富與社會地位的雙重躍遷。",
+            crystals: [{n:"金運石", m:"極致的財運護航者，清理決策雜音，確保您在掌控大局時始終維持穩健獲利。"},{n:"鈦晶", m:"加速能量具現化，協助您將腦海中的戰略藍圖迅速轉化為高品質的實體資產。"}]
+        }
+    };
+
+    const ActionDB = {
+        7: { 
+            t: "覺醒內省年", 
+            c: "2026 適合『深耕核心技術』。這是您品牌重組與專業升級的最佳時機，適合進行閉關研發，讓您的核心競爭力在沈靜中完成維度跨越。", 
+            w: "財富將來自於您的『專業產權』與『深度洞見』。這一年請專注於長期價值的佈局，您的每一份思考都將在未來三年轉化為巨大的複利收益。", 
+            e: "這是一段重質不重量的人際回饋期。適合與伴侶或核心夥伴進行靈魂層面的對話，透過真誠的溝通，修復那些因忙碌而被遺忘的心理連結。", 
+            f: "家是您的能量修復室。適合對居家環境進行能量化的微調或修繕，打造一個能讓靈魂呼吸的安靜空間，減少不必要的家族應酬以保留心力。", 
+            b: "火能量過旺時，高品質的睡眠是最好的藥方。透過規律的冥想與呼吸練習，讓神經系統獲得深度放鬆，這能確保留您的顯化力始終在巔峰。", 
+            cal: [["Q1","盤點","盤點核心資源，清理不對頻的項目","3月：細察合約，確保價值對齊"],["Q2","打磨","投入專業領域的深造與系統優化","5月：保持覺察，避開急躁情緒"],["Q3","測試","開啟小規模市場測試，收集精準反饋","7月：適度留白，確保持久續航力"],["Q4","整合","進行年度成果結算，鎖定智慧資產","11月：專注目標，優雅拒絕分心事項"]]
+        }
+    };
+
+    function 啟動解析() {
+        const name = document.getElementById('姓名').value;
+        const bday = document.getElementById('生日碼').value;
+        const email = document.getElementById('電子信箱').value;
+
+        if(!name || bday.length !== 8) { alert("請填寫姓名與 8 碼生日"); return; }
+
+        let mm = parseInt(bday.substring(4, 6)); let dd = parseInt(bday.substring(6, 8));
+        let yearNum = 加法(2026 + mm + dd);
+        const dStr = bday.substring(6, 8) + bday.substring(4, 6) + bday.substring(0, 4);
+        const l1 = dStr.split('').map(Number);
+        const l2 = []; for(let i=0; i<8; i+=2) l2.push(加法(l1[i] + l1[i+1]));
+        const l3 = []; for(let i=0; i<4; i+=2) l3.push(加法(l2[i] + l2[i+1]));
+        const peak = 加法(l3[0] + l3[1]);
+        const soul = SoulDB[peak] || SoulDB[1];
+        const flow = ActionDB[yearNum] || ActionDB[7];
+
+        // 傳送資料
+        fetch(webAppUrl, { method: 'POST', mode: 'no-cors', body: JSON.stringify({ name: name, email: email, birthday: bday, lineId: document.getElementById('LINE').value, status: "未付款", peakNum: peak, yearNum: yearNum, element: soul.el, p1: l3[0], p2: l3[1], l1: l2[0], l2: l2[1], l3: l2[2], l4: l2[3] }) });
+
+        const alignScore = 80 + (parseInt(bday) % 15);
+
+        let freeHTML = `
+            <div class="章節卡片">
+                <div class="章節標題"><span>第一章：靈魂原型診斷</span><span class="序號">PAGE 01</span></div>
+                <div class="金字塔視覺">
+                    <div class="塔層"><div class="塔點 核心點">${peak}</div></div>
+                    <div class="塔層"><div class="塔點">${l3[0]}</div><div class="塔點">${l3[1]}</div></div>
+                    <div class="塔層"><div class="塔點">${l2[0]}</div><div class="塔點">${l2[1]}</div><div class="塔點">${l2[2]}</div><div class="塔點">${l2[3]}</div></div>
+                </div>
+                <div class="解析本文" style="text-align:center; font-size:20px; color:var(--雲漾金);"><strong>【${peak} 號：${soul.name}】</strong></div>
+                <div class="解析本文">${soul.a}</div>
+            </div>
+            <div class="章節卡片">
+                <div class="章節標題"><span>第二章：2026 能量對齊度</span><span class="序號">PAGE 02</span></div>
+                <div class="效率診斷">
+                    <div style="display:flex; justify-content:space-between; font-size:14px;"><span>年度能量對齊效率</span><span>${alignScore}%</span></div>
+                    <div class="效率條外"><div class="效率條內" style="width:${alignScore}%"></div></div>
+                </div>
+                <div class="解析本文"><strong>雲漾導師觀測：</strong>您目前的頻率對齊程度相當出色。剩下的 <strong>${100-alignScore}%</strong> 擴張空間，將透過 2026 年的「精準行動」來補足。這並非不足，而是靈魂為您預留的成長紅利，等待您在 Q3 到來前主動啟動。</div>
+            </div>
+            <div class="章節卡片">
+                <div class="章節標題"><span>第三、四章：光影特質與水晶校準</span><span class="序號">PAGE 03-04</span></div>
+                <span class="子標題">✦ 靈魂的光芒特質：</span><div class="解析本文">${soul.plus}</div>
+                <span class="子標題">✦ 能量優化切入點：</span><div class="解析本文">${soul.shadows}</div>
+                <span class="子標題">✦ 推薦能量校準工具：</span>
+                ${soul.crystals.map(c => `<div class="水晶卡片"><span class="水晶標題">${c.n}</span><div class="解析本文" style="margin:0;">${c.m}</div></div>`).join('')}
+                <div class="折抵提醒">🎁 雲漾主理人獻禮：今日解鎖全書之 NT$ 600，可全額折抵官網水晶消費，讓文字的指引變為真實的守護。</div>
+            </div>
+            <div class="章節卡片">
+                <div class="章節標題"><span>第五至八章：心理、領導與視野</span><span class="序號">PAGE 05-08</span></div>
+                <span class="子標題">✦ 心理環境需求：</span><div class="解析本文">${soul.env}</div>
+                <span class="子標題">✦ 核心領導風格：</span><div class="解析本文">${soul.lead}</div>
+                <span class="子標題">✦ 觀察世界的視野：</span><div class="解析本文">${soul.view}</div>
+                <span class="子標題">✦ 2026 致富核心提問：</span>
+                <div class="解析本文" style="color:var(--雲漾金); font-weight:bold; font-size:24px; text-align:center; margin-top:20px;">「${soul.q}」</div>
+            </div>
+            <div class="章節卡片">
+                <div class="章節標題"><span>第九章：2026 年度主題預告</span><span class="序號">PAGE 09</span></div>
+                <div class="解析本文">2026 年，您的個人流年正式走入：</div>
+                <div class="解析本文" style="background:rgba(212,180,131,0.08); padding:35px; border-left:4px solid var(--雲漾金);">
+                    <strong style="font-size:24px; color:var(--雲漾金);">【${yearNum} 號：${flow.t}】</strong><br><br>這是一個關於「對齊與顯化」的轉折年。外在火環境將放大您的每一個決定，唯有掌握流年頻率的波動，才能在變動的浪潮中精準卡位。
+                </div>
+            </div>
+        `;
+
+        let paidContent = `
+            <div class="章節卡片">
+                <div class="尊享標籤">旗艦落地版</div>
+                <div class="章節標題"><span>第十章：2026 顯化月曆</span></div>
+                <table class="顯化月曆">
+                    <tr><th>季度</th><th>重點</th><th>建議行動</th><th>覺察提醒</th></tr>
+                    ${flow.cal.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td style="color:var(--提示藍); font-weight:bold;">${r[3]}</td></tr>`).join('')}
+                </table>
+            </div>
+            <div class="章節卡片">
+                <div class="章節標題"><span>第十一章：五維度落地深度解析</span></div>
+                <div class="維度項"><span class="維度標題">事業成長策略</span><div class="解析本文">${flow.c}</div></div>
+                <div class="維度項"><span class="維度標題">財富顯化規劃</span><div class="解析本文">${flow.w}</div></div>
+                <div class="維度項"><span class="維度標題">靈魂關係校準</span><div class="解析本文">${flow.e}</div></div>
+                <div class="維度項"><span class="維度標題">家庭能量場域</span><div class="解析本文">${flow.f}</div></div>
+                <div class="維度項"><span class="維度標題">身心頻率養護</span><div class="解析本文">${flow.b}</div></div>
+            </div>
+        `;
+
+        let payWall = `
+            <div class="支付牆">
+                <div style="color:var(--雲漾金); font-size:26px; font-weight:bold; letter-spacing:5px;">✦ 啟動您的 2026 年度旗艦全書 ✦</div>
+                <div class="解析本文" style="text-align:center; opacity:0.9; margin:20px 0;">致 ${peak} 號人：掌握流年頻率，讓您的顯化事半功倍。</div>
+                <div style="text-align:left; max-width:400px; margin:0 auto; font-size:15.5px; color:#d5d5d5;">
+                    <p>✦ <strong>12 個月顯化月曆</strong>：標註年度核心轉折點與行動重點。</p>
+                    <p>✦ <strong>五維度落地解析</strong>：針對事業、財富、情感的具體實戰指引。</p>
+                    <p>✦ <strong>靈魂導師 2000 字全書</strong>：針對地基數據進行深度頻率校準。</p>
+                    <p>✦ <strong>全額折抵權益</strong>：NT$ 600 可折抵雲漾官網水晶消費。</p>
+                </div>
+                <span class="現價">NT$ 600</span>
+                <a href="${ECPayURL}" target="_blank" class="按鈕 強調">立即支付並完成校準</a>
+            </div>
+        `;
+
+        const area = document.getElementById('報告區域');
+        area.innerHTML = freeHTML + (new URLSearchParams(window.location.search).get('status') === 'paid' ? paidContent : payWall) + `
+            <div class="導流區">
+                <a href="https://lin.ee/Nsksu05" target="_blank" class="按鈕 強調">💬 預約一對一深度能量諮詢</a>
+                <a href="https://yunyangjewelry.com/" target="_blank" class="按鈕">🌐 進入雲漾官網探索能量水晶</a>
+            </div>
+        `;
+        area.style.display = 'block';
+        window.scrollTo({ top: area.offsetTop, behavior: 'smooth' });
+    }
+
+    // --- VIP 對接：自動讀取數據與 2000 字報告 ---
+    window.onload = function() {
+        const params = new URLSearchParams(window.location.search);
+        const row = params.get('row');
+        if (params.get('status') === 'paid' && row) {
+            document.getElementById('inputSection').style.display = 'none';
+            const area = document.getElementById('報告區域');
+            area.style.display = 'block';
+            area.innerHTML = "<div class='章節卡片' style='text-align:center;'>✦ 雲漾導師正在調取您的專屬資料，請稍候...</div>";
+
+            fetch(`${webAppUrl}?row=${row}`).then(res => res.text()).then(report => {
+                document.getElementById('姓名').value = decodeURIComponent(params.get('name') || "");
+                document.getElementById('生日碼').value = params.get('birthday') || "";
+                啟動解析(); 
+                const box = document.createElement('div');
+                box.className = '章節卡片';
+                box.innerHTML = `
+                    <div class="尊享標籤">導師旗艦全書</div>
+                    <div class="章節標題"><span>第十二章：導師 2000 字深度校準內容</span></div>
+                    <div class="解析本文">${report}</div>
+                    <div style="background: rgba(212, 180, 131, 0.1); border: 1px dashed var(--雲漾金); padding: 40px; margin-top: 60px; text-align: center;">
+                        <div style="color: var(--雲漾金); font-size: 20px; font-weight: bold;">✦ 您的能量抵用金已入帳 ✦</div>
+                        <div class="解析本文" style="text-align: center; margin-top: 15px;">本次校準所支付的 <strong style="color: #fff;">NT$ 600</strong> 已自動轉為您的購物金。<br>請帶著本報告的截圖，前往官網挑選專屬您的校準水晶。</div>
+                        <a href="https://yunyangjewelry.com/" target="_blank" class="按鈕 強約" style="width:250px; margin:25px auto 0; text-align:center; display:block;">前往官網挑選水晶</a>
+                    </div>
+                `;
+                area.appendChild(box);
+            });
+        }
+    };
+</script>
+</body>
+</html>
