@@ -22,15 +22,15 @@
         .品牌標誌 { width: 150px; display: block; margin: 0 auto 10px; filter: drop-shadow(0 0 10px rgba(212,180,131,0.3)); }
         h1 { text-align: center; color: var(--雲漾金); letter-spacing: 8px; font-weight: 300; margin-bottom: 50px; font-size: 26px; }
 
-        /* 輸入區樣式 */
+        /* 輸入區 */
         .啟動區 { text-align: center; margin-bottom: 60px; padding: 45px; border: 1px solid var(--線條金); background: rgba(0,0,0,0.4); border-radius: 2px; }
         .輸入組 { margin-bottom: 25px; }
         .標籤 { display: block; color: var(--雲漾金); font-size: 13px; letter-spacing: 3px; margin-bottom: 10px; }
         input { background: none; border: none; border-bottom: 2px solid var(--線條金); font-size: 20px; width: 280px; text-align: center; color: #fff; outline: none; padding: 10px; transition: 0.4s; }
         input:focus { border-bottom: 2px solid var(--雲漾金); }
-        .主按鈕 { background: var(--雲漾金); color: #2a2218; border: none; padding: 18px 70px; font-size: 17px; font-weight: 700; cursor: pointer; margin-top: 35px; border-radius: 1px; letter-spacing: 3px; width: 100%; max-width: 320px; transition: 0.3s; }
+        .主按鈕 { background: var(--雲漾金); color: #2a2218; border: none; padding: 18px 70px; font-size: 17px; font-weight: 700; cursor: pointer; margin-top: 35px; border-radius: 1px; letter-spacing: 3px; width: 100%; max-width: 320px; }
 
-        /* 報告卡片與標題 */
+        /* 報告卡片 */
         #報告區域 { display: none; }
         .章節卡片 { background: var(--卡片黑); border: 1px solid var(--線條金); padding: 50px; margin-bottom: 45px; border-radius: 1px; animation: slideUp 0.8s ease-out; position: relative; }
         .尊享標籤 { position: absolute; top: 20px; right: 20px; background: var(--雲漾金); color: #000; font-size: 11px; padding: 4px 12px; font-weight: bold; letter-spacing: 2px; }
@@ -38,21 +38,13 @@
         .子標題 { color: var(--雲漾金); font-weight: 700; margin-top: 40px; display: block; font-size: 18px; border-left: 4px solid var(--雲漾金); padding-left: 18px; letter-spacing: 2px; margin-bottom: 10px; }
         .解析本文 { font-size: 16.5px; color: #d5d5d5; text-align: justify; line-height: 2.8; white-space: pre-wrap; margin-bottom: 20px; }
 
-        /* 能量條視覺優化 */
+        /* 動態進度條 */
         .效率指標區 { margin: 30px 0; background: rgba(255,255,255,0.03); padding: 25px; border-radius: 4px; }
-        .效率條外 { height: 12px; background: rgba(255,255,255,0.08); border-radius: 10px; overflow: hidden; margin: 25px 0; border: 1px solid rgba(212,180,131,0.2); }
-        .效率條內 { 
-            height: 100%; 
-            width: 0%; /* 初始值 0，透過 JS 控制動畫 */
-            background: linear-gradient(90deg, #8a6d3b, var(--雲漾金), #fff); 
-            background-size: 200% 100%;
-            border-radius: 10px; 
-            transition: width 2.5s cubic-bezier(0.22, 1, 0.36, 1); 
-            box-shadow: 0 0 15px rgba(212,180,131,0.4);
-        }
-        .數據排 { display: flex; justify-content: space-between; margin-top: 15px; }
-        .數據項 { text-align: center; width: 30%; background: rgba(255,255,255,0.03); padding: 15px 5px; border-radius: 2px; }
-        .數據標籤 { display: block; color: var(--雲漾金); font-size: 11px; margin-bottom: 5px; }
+        .效率條外 { height: 12px; background: rgba(255,255,255,0.08); border-radius: 10px; overflow: hidden; margin: 25px 0; border: 1px solid var(--線條金); }
+        .效率條內 { height: 100%; width: 0%; background: linear-gradient(90deg, #8a6d3b, var(--雲漾金), #fff); transition: width 2.5s cubic-bezier(0.22, 1, 0.36, 1); }
+        .數據排 { display: flex; justify-content: space-between; }
+        .數據項 { text-align: center; width: 30%; background: rgba(255,255,255,0.03); padding: 15px 5px; }
+        .數據標籤 { display: block; color: var(--雲漾金); font-size: 11px; }
         .數據值 { font-size: 18px; font-weight: bold; color: #fff; }
 
         /* 金字塔視覺 */
@@ -61,16 +53,16 @@
         .塔點 { width: 45px; height: 45px; line-height: 45px; text-align: center; border: 1px solid var(--線條金); border-radius: 50%; margin: 0 10px; font-size: 16px; color: var(--雲漾金); background: rgba(0,0,0,0.2); }
         .核心點 { background: var(--雲漾金); color: #2a2218; font-weight: bold; transform: scale(1.15); box-shadow: 0 0 25px rgba(212,180,131,0.5); }
 
-        /* 支付牆與水晶卡片 */
-        .支付牆 { background: rgba(28, 25, 22, 0.98); border: 1px solid var(--雲漾金); padding: 55px 35px; box-shadow: 0 10px 80px rgba(0,0,0,1); width: 100%; box-sizing: border-box; margin-top: 20px; text-align: center; }
+        /* 支付牆 */
+        .支付牆 { background: rgba(28, 25, 22, 0.98); border: 1px solid var(--雲漾金); padding: 55px 35px; box-shadow: 0 10px 80px rgba(0,0,0,1); text-align: center; margin-top: 20px; }
         .現價 { font-size: 42px; color: #fff; font-weight: bold; letter-spacing: 2px; display: block; margin: 20px 0; }
-        .按鈕 { text-decoration: none; text-align: center; padding: 22px; border: 1px solid var(--雲漾金); color: var(--雲漾金); font-size: 17px; font-weight: 600; cursor: pointer; display: block; letter-spacing: 3px; transition: 0.4s; }
+        .按鈕 { text-decoration: none; text-align: center; padding: 22px; border: 1px solid var(--雲漾金); color: var(--雲漾金); font-size: 17px; font-weight: 600; cursor: pointer; display: block; letter-spacing: 3px; transition: 0.4s; margin-top: 10px; }
         .按鈕.強調 { background: var(--雲漾金); color: #2a2218; border: none; }
         .顯化月曆 { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 15px; }
         .顯化月曆 th { color: var(--雲漾金); border-bottom: 1px solid var(--線條金); padding: 15px 10px; text-align: left; }
         .顯化月曆 td { padding: 15px 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .水晶卡片 { background: linear-gradient(135deg, rgba(212, 180, 131, 0.08), rgba(28, 25, 22, 0.9)); border: 1px solid var(--雲漾金); padding: 30px; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .水晶標題 { color: var(--雲漾金); font-size: 20px; font-weight: bold; display: block; margin-bottom: 10px; letter-spacing: 2px; border-bottom: 1px solid var(--線條金); padding-bottom: 10px; }
+        .水晶卡片 { background: linear-gradient(135deg, rgba(212, 180, 131, 0.08), rgba(28, 25, 22, 0.9)); border: 1px solid var(--雲漾金); padding: 30px; margin-top: 20px; }
+        .水晶標題 { color: var(--雲漾金); font-size: 20px; font-weight: bold; display: block; margin-bottom: 10px; border-bottom: 1px solid var(--線條金); padding-bottom: 10px; }
 
         @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
     </style>
@@ -93,7 +85,7 @@
     const webAppUrl = "https://hook.eu1.make.com/lmzegbvtpptn2sk7qzxj4i3ukuq1wkqs";
     const ECPayURL = "https://p.ecpay.com.tw/28F4276";
 
-    // --- 【1-9 號靈魂原型深度文本資料庫 - 每段約 150 字以上】 ---
+    // --- 【1-9 號靈魂原型深度文本資料庫 - 100% 完整還原】 ---
     const SoulDB = {
         1: { 
             name: "星金淬鍊者", el: "metal", 
@@ -124,7 +116,7 @@
             plus: "無與倫比的創意爆發力與社交感染力。您是天生的開創者，能為乏味的事務注入熱血沸騰的旺盛生命力。", 
             shadows: "能量容易因興奮而發散，需警惕「開頭美好，收尾潦草」的傾向。學會與落地型夥伴深度對接是年度成功關鍵。", 
             env: "需要充滿重要性與高度自主權的舞台。狹隘的環境會窒息您的創造靈魂，您需要能自由擴張且色彩明亮的空間。", 
-            lead: "以願景引領變革。您的領導風格極具煽動性與熱情，能帶領團隊在快節奏中共同衝破原有現狀的束縛限制。", 
+            lead: "以願景引領變革。您的領導風格極具煽動性與熱情，能帶領團隊在快節奏中衝破原有現狀的束縛限制。", 
             view: "預見趨勢的全局視野。您對市場風口有種原始的動物直覺。這種洞察力讓您在 2026 年掌握難得的藍海優勢。", 
             crystals: [{n:"金太陽石", m:"強化落地實力，將天馬行空的靈感具現化為真實財富。"},{n:"紅超七", m:"強化行動效能，精準鎖定目標並快速完成年度顯化願景。"}] 
         },
@@ -142,7 +134,7 @@
         5: { 
             name: "坤土孕育者", el: "earth", 
             q: "如何調度萬物資源，在變動的大地中建立最穩定的財富綠洲？", 
-            a: "您攜帶著靈魂中最溫厚且強大的「轉化」頻率，如同大地般承載並孕育萬物。2026 火年對坤土靈魂而言，是名副其實的「生長之年」。外在的燥熱火能正在深度滋養著您的土元素，將過往沉寂的資源煮沸。這一年您的核心價值在於「資源重組」，當您學會放下對過往舊模式的過度執著，主動與新趨勢對接時，您的生命版圖將會出現前所未有的斷層式飛躍。您天生具備整合互斥意見的能力，這讓您在動盪的 2026 年成為眾人尋求安定的中心。不要害怕改變現狀，每一次的鬆土都是為了孕育更豐盛的果實。只要您能建立起心理的地基，火年將是您個人財富與社會影響力最豐碩的翻倍期。", 
+            a: "您攜帶著靈魂中最溫厚且強大的「轉化」頻率，如同大地般承載並孕育萬物。2026 火年對坤土靈魂而言，是名副其實的「生長之年」。外在的燥熱火能正在深度滋養著您的土元素，將過往沈寂的資源煮沸。這一年您的核心價值在於「資源重組」，當您學會放下對過往舊模式的過度執著，主動與新趨勢對接時，您的生命版圖將會出現前所未有的斷層式飛躍。您天生具備整合互斥意見的能力，這讓您在動盪的 2026 年成為眾人尋求安定的中心。不要害怕改變現狀，每一次的鬆土都是為了孕育更豐盛的果實。只要您能建立起心理的地基，火年將是您個人財富與社會影響力最豐碩的翻倍期。", 
             plus: "極強的環境適應力與資源調度智慧。您能包容並整合各種元素。這種「承載力」是您商戰中最強大的籌碼。", 
             shadows: "感到失去連結或被束縛時會陷入停滯。需警惕內心的「慣性舒適區」，主動打破現狀能讓能量重新活化。", 
             env: "需要穩固的心理地基與具備厚重質感的空間。一個具備歸屬感的環境能啟動您的驚人整合與轉化力。", 
@@ -153,10 +145,10 @@
         6: { 
             name: "星金權威者", el: "metal", 
             q: "如何優雅地卸下責任重擔，讓系統為您創造規模化的財富？", 
-            a: "您是天生的系統設計師，靈魂中刻畫著「責任」與「秩序美學」的深沉印記。2026 丙午火年，您的領導地位將經歷一次從量變到質變的飛躍。火的熱能正在催促您將原本「事必躬親」的勞碌模式，轉化為「智慧主控」的高階格局。這一年您的成功程度，並不取決於您額外做了多少努力，而取決於您學會放下多少瑣事。當您的靈魂騰出了空間，不再被責任感過度綑綁，您才能真正看見規模化擴張的槓桿點。火年是淬鍊您信譽的巔峰期，當您展現出「放手卻主控」的姿態，系統將會自動為您運作。這是一場關於「從管理者到守護者」的華麗轉身，讓您的規則成為團隊與市場的信仰。", 
+            a: "您是天生的系統設計師，靈魂中刻畫著「責任」與「秩序美學」的深沈印記。2026 丙午火年，您的領導地位將經歷一次從量變到質變的飛躍。火的熱能正在催促您將原本「事必躬親」的勞碌模式，轉化為「智慧主控」的高階格局。這一年您的成功程度，並不取決於您額外做了多少努力，而取決於您學會放下多少瑣事。當您的靈魂騰出了空間，不再被責任感過度綑綁，您才能真正看見規模化擴張的槓桿點。火年是淬鍊您信譽的巔峰期，當您展現出「放手卻主控」的姿態，系統將會自動為您運作。這是一場關於「從管理者到守護者」的華麗轉身，讓您的規則成為團隊與市場的信仰。", 
             plus: "極致的細節管理與信譽基石。您對承諾的熱忱讓您在業界無可替代。您是那個能將混亂想法變為高效產線的人。", 
             shadows: "面對無序變動或邏輯不通時，內心會產生強烈憤怒。學習接受「混亂也是秩序的一種」能減少火年的情緒耗損。", 
-            env: "絕對的環境主控權與整潔高效的辦公空間。具備邏輯感的美學能確保您的決策品質始終處於最高水準。", 
+            env: "絕對的環境主控權與整潔高效的辦公空間。具備邏輯感的美學能確保您的決策品質始則處於最高水準。", 
             lead: "以「規律與標準」為本。您的領導像精密鐘錶，透過流程規模化，讓成果不再依賴您的肉身產出與損耗。", 
             view: "一眼洞穿系統隱患的預警能力。這種天賦讓您在進行重大決策時比他人更早控管風險，守住龐大的財富版圖。", 
             crystals: [{n:"金運石", m:"強力守護磁場，吸引獲利流向，排除不對頻的情緒與物質消耗。"},{n:"黑銀鈦", m:"清理決策雜訊，讓您的權威感在火年的波動中穩如泰山。"}] 
@@ -191,11 +183,11 @@
             shadows: "在僅為逐利的狹隘競爭環境中會感到嚴重失衡。火年需警惕「過度犧牲」，記住，愛自己的靈魂與愛世人同樣重要。", 
             env: "需要具備提昇感、開放且具備貢獻意義的空間。充滿自然光、人文氣息的環境能協助您的視界保持清明。", 
             lead: "喚起使命感。您的領導在於靈魂的感召，讓每個人主動對齊崇高目標。您不是在管理員工，而是在引領靈魂。", 
-            view: "將夢想變為真實的覺醒視野。您看見的是萬物相互連結的網。這種意識高度讓您的事業不僅具備利潤，更具備永續價值。", 
+            view: "將夢夢想變為真實的覺醒視野。您看見的是萬物相互連結的網。這種意識高度讓您的事業不僅具備利潤，更具備永續價值。", 
             crystals: [{n:"超七", m:"提升全頻率能量，對齊靈魂覺醒視野，在快速變動中維持核心的平穩與高度。"},{n:"綠幽靈", m:"守護開創初衷，將慈悲能量轉化為現實社會的豐盛成果，招來正財與貴人。"}] 
         }
     };
-// --- 【1-9 號個人流年深度行動庫 - 五維度皆經極致擴充】 ---
+// --- 【1-9 號個人流年深度行動智庫 - 100% 全文還原版】 ---
     const ActionDB = {
         1: { 
             t: "開創啟動年", 
@@ -209,45 +201,88 @@
         2: { 
             t: "磨合協調年", 
             c: "經過了去年的激進開創，2026 年對您而言正式進入了細膩且深度的磨合期。事業上的關鍵不在於獨自衝刺，而在於「深度結盟」與「團隊對齊」。您會發現許多優質的機會不再是靠自己爭取，而是透過人際網絡的「弱連結」意外降臨。這一年需要您發揮極致的耐心，去處理過去被忽略的合約細節與夥伴矛盾。學會與競爭對手共榮，將您的主見轉化為圓融的引導力。在退步中求進步、在聽從中實現主控，是今年顯化的最高智慧。火年會讓眾人浮躁，而您的溫潤將成為市場上最稀缺的資產。", 
-            w: "財務運勢趨於沉澱與觀望，這並非財運不佳，而是宇宙在測試您的「守財頻率」。不建議在今年進行任何大張旗鼓、風險極高的投機行為。今年的獲利來自於過去佈局的細水長流，以及透過優質合作關係帶來的被動分潤。請重新檢視您的開支清單，刪除無效的社交花費。耐心與紀律是您守住財富的唯一真理。火年雖然熱錢湧動，但只有那些懂得在低處築壩的人（即做好基礎財務控管），才能在年底收穫最穩健的財富甘露。", 
+            w: "財務運勢趨於沈澱與觀望，這並非財運不佳，而是宇宙在測試您的「守財頻率」。不建議在今年進行任何大張旗鼓、風險極高的投機行為。今年的獲利來自於過去佈局的細水長流，以及透過優質合作關係帶來的被動分潤。請重新檢視您的開支清單，刪除無效的社交花費。耐心與紀律是您守住財富的唯一真理。火年雖然熱錢湧動，但只有那些懂得在低處築壩的人（即做好基礎財務控管），才能在年底收穫最穩健的財富甘露。", 
             e: "這是情感修復、溝通與靈魂深化的黃金年份。您需要比往常更多的對話來化解潛在的冷戰或衝突。單身者容易在現有的圈子中，與原本熟悉的同事或朋友產生深層的共鳴，這是一份來自「日久生情」的穩定能量。已婚者則需注意情緒的「吸納效應」，不要把外部的焦慮帶回家。溫柔是您今年最強大的防禦磁場，試著與伴侶共同參與心靈成長課程或安靜的旅行，這能讓兩人的關係建立起不可撼動的防禦機制。", 
             f: "您將扮演家庭中的「靈魂和諧劑」，處理長輩或平輩之間長年存在的隔閡。透過溫暖的傾聽與不帶偏見的引導，您能大幅強化家族成員之間的凝聚力。這是一個適合添購軟裝、增加居家舒適度或舉辦溫馨家聚的年份。家中的風水位若能佈置水能量元素，將有助於平息火年帶來的口舌是非。您的付出會被家人深刻記住，這種情感的後盾會轉化為您未來數年的「貴人運勢」。", 
             b: "請特別注意消化系統與淋巴循環的健康。情緒容易因為外界的磨合而感到內耗，進而影響食慾或代謝。建議定期進行淋巴排毒按摩、足浴或瑜珈伸展，讓身體的液體能量保持暢通，預防氣血淤塞。這一年不需要過度追求運動強度，而應追求「節奏的規律性」。保持生理時鐘的穩定，能協助您的直覺在關鍵判斷時刻保持靈敏。學會在繁忙的社交對接中留給自己片刻的沈默，是保護頻率的關鍵。", 
             cal: [["Q1", "觀察", "耐心等待", "2月:溝通誤解"], ["Q2", "媒合", "連結資源", "4月:利益細察"], ["Q3", "深化", "建立信任", "7月:情緒內耗"], ["Q4", "成形", "穩定合作", "12月:分享果實"]] 
         },
+        3: { 
+            t: "創意爆發年", 
+            c: "您的靈魂正被丙午火年點燃，這是一年關於「自我表達」與「舞台展示」的年份。您的點子將層出不窮，且具備極強的市場渲染力。在事業上，適合進行品牌升級、公關推廣或跨界聯名。不要害怕展現您的獨特性，越具備個人風格的作品，越能吸引到對頻的高端客戶。這是一個從「幕後轉向幕前」的關鍵期，您的言論將具備前所未有的影響力。只需注意避免能量過度發散，將熱情鎖定在核心目標上，您將在年底收穫如煙火般燦爛的名聲與地位。", 
+            w: "財富運勢隨著您的個人魅力而水漲船高，屬於「名氣帶動財氣」的典型年份。您的社交活動將帶來意想不到的賺錢契機。投資方面，適合關注新技術、設計美學或娛樂產業相關的標的。然而，火年燥氣容易讓您產生衝動消費的欲望，特別是在奢侈品或社交應酬上。建立一個預算天花板，能確保您的財富在噴發之餘，依然能留存下厚實的基底。這是一年靠「智慧與靈感」致富的黃金期，請盡情揮灑您的創造力。", 
+            e: "情感生活將如烈火般絢爛。單身者桃花極旺，容易在短時間內陷入熱戀，請享受這份激情，但也要保持一分理智觀察對方的價值觀。已婚者則適合與伴侶一起出國旅遊、參加熱鬧的派對或共同學習藝術創作，讓愛火重燃。今年您的吸引力正處於九年大循環的高點，透過展現才華，您能與伴侶建立起更有活力的連結。請注意，不要讓過度的自我中心傷害到對方的感受。", 
+            f: "家庭氛圍將變得非常活絡，可能會有頻繁的聚餐、慶典或家庭旅行。您在家人眼中是帶來快樂與希望的角色。這是一個修復與子女或晚輩關係的絕佳時機，透過分享您的成長經歷與夢想，您能成為家族中的精神導師。家中佈置可以嘗試加入色彩明亮的裝飾，如紅色或橘色的花卉，這能增強家庭整體的顯化動能。", 
+            b: "由於生活步調極快且社交頻繁，需特別注意心臟與小腸的能量平衡。避免長期處於高亢興奮的狀態，導致神經衰弱。火年容易引起身體的發炎症狀，請減少刺激性飲食，多補充抗氧化食物。規律的排汗運動（如熱瑜珈或舞蹈）能協助您代謝掉內心的燥氣。睡眠品質是您今年維持美貌與活力的核心，確保大腦能得到徹底的休息，支持您的創意持續產出。", 
+            cal: [["Q1", "發想", "靈感噴發", "1月:節奏紊亂"], ["Q2", "宣傳", "品牌曝光", "6月:過度擴張"], ["Q3", "收斂", "聚焦成果", "9月:流言紛擾"], ["Q4", "閃耀", "站上巔峰", "11月:貴人引薦"]] 
+        },
+        4: { 
+            t: "穩健扎根年", 
+            c: "這是一個將「願景落地」的年份。經過了去年的喧囂，2026 年要求您建立最嚴謹的系統與流程。事業上的成功不再來自於運氣，而是來自於您的「專業厚度」與「合約細節」。這是一年適合進行內部管理優化、員工培訓或專業證照取得的年份。您的穩定將贏得客戶的長期信任，雖然過程看似枯燥且步調較慢，但這是在為未來的飛躍建立不可撼動的基石。在混亂的火年中，您的邏輯感將成為行業中的清流，這正是您 2026 最大的競爭優勢。", 
+            w: "財富運勢進入「積沙成塔」的穩健期。這是一年適合進行資產配置優化、長期定存或房地產規劃的年份。您的獲利將來自於精確的成本控管與複利效應，而非短線投機。請建立一套自動化的財務管理系統，減少不必要的人為干擾。雖然收入增長速度看起來較平緩，但資產的安全性卻是九年循環中最高的。謹記：穩健的現金流比高額的帳面數字更有價值。耐心守候，您的財富地基將在今年徹底固化。", 
+            e: "情感關係追求的是「安全感」與「承諾」。單身者今年不追求速食愛情，更傾向於尋找能長期相處、價值觀對頻的穩定伴侶。已婚者則適合共同討論未來的家族理財、置產或育兒計畫，透過共同的責任感，能讓兩人的關係變得更加深沉且踏實。今年您的情感關鍵詞是「守護」，在平淡的日常中給予對方最溫暖的支持。只需注意不要因為忙於事業建設，而讓居家生活顯得過於死板、缺乏情趣。", 
+            f: "您將成為家族中最強大的頂樑柱，處理各類繁瑣的家族事務與法律問題。這是一年適合進行祖產規劃、整理家譜或重新定義家族規則的時機。您的嚴謹與公正將贏得長輩的絕對依賴。家中環境適合進行大掃除、斷捨離，丟掉舊有的、負面的家族能量載體。佈置上建議多使用土元素與木元素，如實木家具或陶瓷器皿，能強化家庭的穩定磁場。", 
+            b: "請特別注意骨骼、關節與牙齒的健康。長期的低頭辦公或壓力積累，容易導致肩頸僵硬。建議定期進行整復推拿、徒手物理治療或皮拉提斯訓練，強化核心肌群的支撐力。這一年適合進行體質的「基礎建設」，如規律的重訓或補鈣。火年燥氣容易傷腎水，請確保每日水分攝取充足，並養成早睡早起的習慣。身體載具的穩固，是支撐您龐大版圖的唯一資本。", 
+            cal: [["Q1", "重整", "優化結構", "2月:進度落後"], ["Q2", "扎根", "深度執行", "5月:溝通斷層"], ["Q3", "加固", "系統升級", "8月:細節修正"], ["Q4", "成形", "穩定獲利", "10月:資源對接"]] 
+        },
+        5: { 
+            t: "自由變革年", 
+            c: "2026 年是您生命中的「轉折年」。一股強大的渴望將推動您打破過去五年的框架。事業上，這是一年非常適合轉型、跨界或嘗試全新商業模式的年份。您將會遇到許多充滿不確定性但也充滿誘惑的機會，關鍵在於您的「彈性」。火年的能量會加速舊體系的瓦解，請擁抱這份變動，不要試圖死守過時的模式。主動去與不同圈層的人對接，您會發現全新的獲利藍海。這是一年關於「進化」的年份，敢於放棄昨日的成就，才能拿走明日的紅利。", 
+            w: "財務運勢處於「動能極強」的狀態，錢財進出的頻率都會大幅增加。財富來自於「資訊差」與「快節奏的決策」。今年不適合長期被動的等待，更適合關注短線波動、新興幣種或跨國貿易契機。火年會帶來極大的投機誘惑，您的任務是在冒險與風險中取得平衡。建議將一部分資金投入「體驗式消費」，如去參加高階論壇或考察新市場，這會轉化為您未來的核心產能。保持財務組合的高度流動性，是您今年致富的唯一密碼。", 
+            e: "情感關係將面臨「空間與距離」的考驗。單身者將會在旅途中或社交軟體上遇到各種令人驚喜的對象，這是一段追求新鮮感與靈魂碰撞的時期。已婚者則需在關係中保留適度的個人空間，建議安排個別的短途旅行或發展各自的興趣。今年您的情感關鍵詞是「驚喜」，在關係中不斷創造新的互動體驗，能避免兩人陷入平庸的枯燥中。只需注意控制好奇心，不要讓外界的誘惑干擾到核心關係的信任根基。", 
+            f: "家庭中可能會出現居住環境的改變、搬遷或家庭成員的進出。您將扮演推動家庭變革的角色，引進新的思維與生活方式。這是一年適合重新定義「家」的年份，它不再只是固定的屋簷，而是心靈的避風港。家中適合佈置具有異國風情的物件或大面積的玻璃窗，引入流動的光與風。只需注意，在您全速追求改變時，要多關照家中長輩對安定的渴求。", 
+            b: "需高度警惕神經系統與呼吸系統的負荷。生活節奏的劇烈變動，容易導致壓力型皮疹或失眠。請強制要求自己安排「數位排毒」時間，遠離手機與過度資訊，讓大腦重新歸零。這一年適合嘗試靈活度高的運動，如攀岩、泰拳或流動瑜珈，排解體內的變革張力。火年容易引起肺燥，請多攝取具備潤肺功效的水果與白色食物。在繁忙的對接中，學會深呼吸是保護核心頻率的關鍵。", 
+            cal: [["Q1", "突破", "打破常規", "3月:決策反覆"], ["Q2", "擴張", "跨界整合", "6月:溝通誤解"], ["Q3", "轉向", "修正航道", "9月:情緒震盪"], ["Q4", "重生", "版圖雛形", "12月:貴人顯化"]] 
+        },
+        6: { 
+            t: "美感責任年", 
+            c: "2026 年要求您回到「人」的核心價值。事業上的成功將取決於您的服務品質與美學呈現。這是一年適合進行品牌美感修復、客戶關係深度經營或投入具備社會公益價值項目的年份。您的影響力將轉化為慈悲與療癒，這讓您在激烈的商業競爭中展現出獨特的「柔性權威」。在火年大家都在衝刺利潤時，您對細節的關懷與責任感將成為品牌最強的溢價空間。只需注意不要因為過度追求和諧，而犧牲掉團隊應有的戰鬥力。以德服人，是您 2026 顯化財富的高階路徑。", 
+            w: "財務運勢趨於穩定且具有回饋性質。財富來自於「老客戶的轉介紹」與「高品質的合作關係」。這是一年適合進行信託、保險規劃或投入具備傳傳承價值的珠寶、藝術品的年份。您的消費行為會更傾向於提升生活質感。火年容易帶來財務上的分配糾紛，您的誠信與清晰的帳目紀錄將是最好的防禦盾牌。只需記住：賺錢的目的是為了創造更美好的生活環境，適度的分享利潤，反而會讓更大的財富流向您的智庫容器中。", 
+            e: "這是情感關係中最溫暖、最具責任感的年份。單身者容易在身邊既有的圈子中，遇到具備家長氣質、值得依靠的穩定對象。已婚者則適合與伴侶討論家庭增員、改善居家裝修或共同承擔家族長輩的照護責任，透過彼此的付出，讓兩人的連結變得牢不可破。今年您的情感關鍵詞是「共情」，在對方脆弱時給予最紮實的擁抱。只需注意，不要在不知不覺中對伴侶產生「情感勒索」。", 
+            f: "您將成為家族中的「靈魂守護者」與美學導向者。這是一年適合舉辦溫馨家宴、修繕祖宅或購置高品質家居用品的年份。透過您的美學品味，您可以活化家庭整體的和諧氣場，讓家中每位成員都感受到被愛與被尊重的價值。佈置上建議使用柔和的黃色與綠色，並擺放溫潤的玉石或粉晶，這能中和火年帶來的口角與燥熱。您的承擔會換來家族成員的長期尊敬。", 
+            b: "請特別注意喉嚨、頸部與皮膚的健康。火年燥氣較重，內心的責任壓力若無法抒發，容易引發皮膚過敏或喉嚨發炎。建議定期進行芳療按摩、聲納療癒或高品質的SPA，讓緊繃的感官得到舒緩。這一年不追求運動的競技性，而追求「過程的享受」，如在森林中漫步或在溫泉中放鬆。飲食上請特別注重精緻度與天然性，遠離化學添加。健康的體魄是您維持高頻顯化的能量核心。", 
+            cal: [["Q1", "重修", "客戶深耕", "2月:情緒內耗"], ["Q2", "美化", "品牌升級", "4月:細節磨合"], ["Q3", "奉獻", "社會貢獻", "7月:過度疲勞"], ["Q4", "圓滿", "關係收割", "11月:資源共享"]] 
+        },
+        7: { 
+            t: "真理覺醒年", 
+            c: "2026 年是您深度「閉關修煉」的一年。外在的環境雖然火熱，但您的靈魂正渴求著安靜與真相。在事業上，這是一年適合進行深度研究、技術研發或長線趨勢預判的年份。不要急著跳入市場的競爭浪潮，您的沈默比盲目的行動更有產值。在安靜中，您將會看穿行業背後的因果律，捕捉到別人遺漏的關鍵細節。這是一個「以退為進」的策略期，您所建立的深度見解，將在未來兩年轉化為市場上無人能及的高階價值。只需注意避免與平庸之人解釋您的遠見。", 
+            w: "財務運勢處於「智力變現」的醞釀期。這是一年適合進行資產體檢、排除無效負債或研究深度投資邏輯的年份。您的獲利將來自於對市場底層邏輯的透視，而非隨波逐流的跟風。火年容易帶來投資上的幻象與假消息，您的冷靜與懷疑精神將成為保衛財富的最強盾牌。建議將一部分預算投入「智慧投資」，如購買高階課程、專業數據資料庫或諮詢頂尖專家。這一年您的錢財流向應該是精準且帶有目的性的。", 
+            e: "情感生活追求的是「靈魂共振」與「高品質的沈默」。單身者今年不追求膚淺的激情，更傾向於尋找能進行深度哲學討論、理解您內心孤獨的對象。已婚者則需在關係中建立「靈魂避風港」，建議與伴侶一起進行靜坐、冥想或探訪具備歷史氣息的景點。今年您的情感關鍵詞是「理解」，看穿對方的行為背後的恐懼與渴望，給予無聲的支持。只需注意不要讓伴侶感到被疏遠與冷落。", 
+            f: "您將扮演家庭中的「智囊角色」，處理涉及家族信仰、法律或重大決策的幕後指引。這是一年適合整理家庭文書、遺囑規劃或建立家族信託的年份。您的冷靜與遠見將協助家族避開潛在的系統性風險。家中環境適合佈置出一塊絕對安靜的思考區，如書房或禪堂，放置藍色或紫色的物件，能穩定火年帶來的浮躁磁場。只需注意在指出家人缺點時，語氣要帶有一分慈悲與圓融。", 
+            b: "需高度警惕精神壓力與睡眠障礙。火年燥氣會干擾您的腦波頻率，導致多夢或思慮過度。請強制要求自己遠離所有電子干擾，養成早睡早起的規律習慣。這一年適合進行內在的「能量排毒」，如斷食、音療療癒或冰浴訓練。在安靜中觀察您身體的細微震動，及早發現潛在的機能失衡。飲食上請追求清淡與天然，多攝取具備水能量的蔬果。健康的身體是您進行深度思考的唯一容器。", 
+            cal: [["Q1", "內省", "數據分析", "3月:假象干擾"], ["Q2", "沈澱", "技術突破", "5月:孤獨感襲"], ["Q3", "透視", "趨勢預判", "8月:精準出擊"], ["Q4", "覺醒", "智慧變現", "12月:貴人相助"]] 
+        },
         8: { 
             t: "顯化收成年", 
-            c: "這是您九年大循環中能量最強、收獲最豐的巔峰年份。所有的因果種子都將在 2026 年正面顯化。在事業上，您將到達一個具備絕對話語權的位置，非常適合進行大額的合約簽署、公司收購或規模化的利潤收割。您的權威感無人能敵，過去八年的辛勤耕耘將正式轉化為具體的頭銜、地位與稀缺資源。請毫不保留地展現您的野心，大膽調度手中的萬物資源，火年的火屬性能量會全力推動您的版圖擴張。這是一個屬於贏家的年度，任何猶豫都是對這股強大顯化流的浪費，請保持高頻率的決策輸出。", 
+            c: "這是您九年大循環中能量最強、收獲最豐的巔峰年份。所有的因果種子都將在 2026 年正面顯化。在事業上，您將到達一個具備絕對話語權的位置，非常適合進行大額的合約簽署、公司收購或規模化的利潤收割。您的權威感無人能敵，過去八年的辛勤耕耘將正式轉化為具體的頭銜、地位與稀缺資源。請毫不保留地展現您的野心，大膽調度手中的萬物資源，火年的火屬性能量會全力推動您的版圖擴張。這是一個屬於贏家的年度，請保持高頻率的決策輸出。", 
             w: "這是財富的大爆發期，資產規模化的最佳時機已經降臨。無論是股權增值、大宗資產交易或長期佈局的商業回報，都會以驚人的速度向您靠攏。請建立最專業的律師與會計團隊，將這筆龐大的財富固化為具備傳承價值的基石。火年會帶來極大的獲利槓桿，您可以嘗試利用外部資金來放大您的收益空間，但前提是必須擁有絕對的控管力。今年的目標不是存錢，而是讓資產發生「質的躍遷」，建立您的財富堡壘。", 
             e: "您的情感關係將展現出令人羨慕的社會高度。已婚者可能與伴侶共同出席高端場合、顯化家族的榮耀，甚至在事業上達成深度互補。單身者極易在事業合作或高端商會中，遇到與您門當戶對、且能提供實質資源幫助的高階對象。今年的情感不再只是小情小愛，更多是關於「能量的共振」與「共同成長的榮耀」。您在伴侶眼中的價值將達到巔峰。請保持領袖風範，您的吸引力源自於您對生命的掌控感。", 
-            f: "這是提升整體生活品質、顯化家族榮譽的關鍵年。您可以大膽購買豪宅、豪車，或為家人提供最高階的保險與教育資源。透過您的成功，整個家族的尊榮感與安全感將得到大幅提升。這是一個全家共享豐盛果實的神聖時刻，您的慷慨與承擔將會贏得所有家族成員的尊重。適合舉辦盛大的家族慶祝活動，將這份豐盛的頻率傳遞給下一代。感恩與分享是您守住這份龐大財富、防止能量反噬的唯一關鍵密碼。", 
+            f: "這是提升整體生活品質、顯化家族榮譽的關鍵年。您可以大膽購買豪宅、豪車，或為家人提供最高階的保險與教育資源。透過您的成功，整個家族的尊榮感與安全感將得到大幅提升。這是一個全家共享豐盛果實的神聖時刻，您的慷慨與承擔將會贏得所有家族成員的尊重。適合舉辦盛大的家族慶祝活動。感恩與分享是您守住這份龐大財富、防止能量反噬的唯一關鍵密碼。", 
             b: "需高度警惕心血管與血壓波動問題。巔峰的成功背後隱藏著極高壓的決策環境與社交負荷。請強制要求自己安排假期，遠離高溫環境與過度的腦力操勞。定期進行全身的深度健康檢查，確保您的身體載具能支撐住這份龐大的年度榮耀與財富能量。嘗試進行深度呼吸訓練或冰浴療法，這能協助您的神經系統在極速運作中快速冷卻，保持核心頻率的絕對穩定。記住，健康的體魄是您管理財富版圖的最高資本。", 
             cal: [["Q1", "備戰", "盤點資源", "2月:盲目投資"], ["Q2", "槓桿", "高端對接", "4月:溝通斷層"], ["Q3", "爆發", "顯化高峰", "8月:全速衝刺"], ["Q4", "收官", "系統升級", "12月:擴張失控"]] 
         },
-        // (其餘流年 3,4,5,6,7,9 均以此標準擴充，確保 150 字以上內容...)
+        9: { 
+            t: "重生圓滿年", 
+            c: "2026 年是您九年循環的結尾，這是一個關於「盤點、清理與回饋」的年份。事業上的成功將不再取決於您新接了多少項目，而取決於您優雅地結束了多少不再對頻的舊事務。這是一年非常適合進行慈善事業、員工分紅或精神領袖品牌打造的年份。當您展現出大度的提攜後進、服務集體的姿態時，宇宙會以前所未有的榮耀回饋給您。請優雅地放手那些沈重的負擔，為明年開始的新循環騰出空間。大愛即是大財，這是您今年顯化的最高維度。", 
+            w: "財務運勢處於「因果回報期」。過去九年的善惡因果將在今年結帳。您的獲利將來自於「無私的貢獻」與「品牌信譽的複利」。這是一年適合進行資產清點、慈善捐贈或精神資產（如著作權、智慧財產）授權的年份。火年容易帶來財務上的虛假繁榮，請保持心境的圓滿，不貪求最後一分利潤，反而能守住最大的財富根基。將金錢轉化為社會影響力與靈魂的平安，這將是您今年獲益倍率最高的路徑。", 
+            e: "情感關係走向「大圓滿」或「靈魂解脫」。單身者容易遇到具備宿命感、能帶領您精神提升的對象。已婚者則適合與伴侶共同參與志工服務、靈修營或回顧兩人的生命旅程，在感激與寬恕中讓關係昇華到另一個維度。今年您的情感關鍵詞是「慈悲」，原諒過去所有的摩擦，擁抱當下的圓滿。只需注意，不要讓過度的自我犧牲變成對方的壓力，記住，愛自己與愛世人同樣重要。", 
+            f: "您將扮演家族中的「靈魂導師」與「大和解者」。這是一年適合處理長年家族糾紛、進行遺產傳承教育或舉辦大型家族聚會的時機。您的存在本身就是一種療癒力，協助家人放下舊有的業力束縛。家中環境適合佈置得充滿人文藝術氣息與自然光，放置白色或金色的水晶，能中和火年帶來的最後燥氣，讓家庭能量徹底歸零與重生。您的分享將為子孫後代種下豐盛的種子。", 
+            b: "請特別注意精神層面的排毒與免疫系統的養護。長期的能量輸出容易導致身體的「虛熱」。建議定期進行深度睡眠療法、藝術療癒或長期的森林療養。這是一年適合進行全身心「歸零」的年份，讓您的細胞在平靜中重生。火年容易引起神經系統的過熱，請減少攝取咖啡因與加工食品。規律的靜坐與深呼吸，能確保您的靈魂載具能平穩地度過這次循環的終點。健康的體魄應伴隨著靈魂的輕盈。", 
+            cal: [["Q1", "清理", "結束舊案", "1月:離愁襲來"], ["Q2", "回饋", "提攜後進", "5月:能量耗損"], ["Q3", "轉化", "精神昇華", "9月:因果結算"], ["Q4", "重生", "預備新元", "12月:顯化圓滿"]] 
+        }
     };
-
-    // --- 【動態解析引擎：解決 0116 與 1214 差異化之核心邏輯】 ---
-
+// --- 3. 【輔助運算引擎：細節處理與能量碎片】 ---
     function 解析碎片(bday) {
         const d = bday.split('');
-        let uniqueTxt = "";
-        
-        // 核心判斷：偵測特定數字組合 (解決主理人提到的差異化感受問題)
-        if (d.includes('1') && d.includes('7')) {
-            uniqueTxt = "【能量碎片：洞察探索者】主理人觀測到您的生日代碼中存在 1（開創）與 7（真理）的罕見交織。這代表您擁有一顆獨立且深邃的核心，2026 年對您而言，『精準』遠比『速度』重要。您不需參與盲目的社交浪潮，在安靜思考後的精準一擊，將創造斷層式的顯化成果，這是您的專屬權威。";
-        } else if (d.includes('3') && d.includes('5')) {
-            uniqueTxt = "【能量碎片：靈動擴張者】偵測到數字能量中的 3（創意）與 5（變革）。這預示著 2026 年對您而言，『體驗』與『跨界』將是獲利的最強動力。請保持強烈的好奇心，您將在多樣化的嘗試中，捕捉到別人看不見的巨大紅利。火年會點燃您的變革因子，請大膽打破過去的所有限制，您是天生的顯化玩家。";
-        } else {
-            uniqueTxt = "【能量碎片：穩健建構者】您的能量基石非常紮實，代碼顯示出強大的邏輯感與穩定度。這讓您在 2026 丙午火年的波動中，能展現出優於常人的定力與判斷力。今年不適合冒進，更適合在既有的豐盛基礎上，進行系統性的優化與規模擴張，您將在穩定中實現最終的財富大爆發。";
-        }
-        return uniqueTxt;
+        if (d.includes('1') && d.includes('7')) return "【能量碎片：洞察探索者】主理人觀測到您的生日代碼中存在 1（開創）與 7（真理）的罕見交織。這代表您擁有一顆獨立且深邃的核心，2026 年對您而言，『精準』遠比『速度』重要。您不需參與盲目的社交浪潮，在精準一擊後，將創造斷層式的顯化成果。";
+        if (d.includes('3') && d.includes('5')) return "【能量碎片：靈動擴張者】偵測到數字能量中的 3（創意）與 5（變革）。這預示著 2026 年對您而言，『體驗』與『跨界』將是獲利的最強動力。火年會點燃您的變革因子，大膽打破限制，您是天生的顯化玩家。";
+        return "【能量碎片：穩健建構者】您的能量基石非常紮實，代碼顯示出強大的邏輯感與穩定度。這讓您在 2026 丙午火年的波動中，能展現出優於常人的定力與判斷力。今年適合在既有的豐盛基礎上，進行系統性的優化。";
     }
 
     function 生成對齊解析(score) {
-        if (score >= 90) return `目前您的頻率與 2026 宇宙流年的對齊程度顯示為 **${score}%**。這是一個極為罕見的「深度共振」狀態。代表您的內在意圖已與顯化動能高度同步。目前的微小空隙，是主理人為您預留的優化空間，只要保持目標視覺化，顯化將自動匯聚。`;
-        if (score >= 75) return `目前您的頻率對齊程度顯示為 **${score}%**。這代表靈魂慣性與 2026 年之間存在特定的「擴張紅利」。建議在 Q2 結束前完成不必要能量的斷捨離，這能將對齊率直接推向巔峰，轉化為實質的財富收益。`;
-        return `偵測到頻率中存在特定的「動能摩擦」，對齊度為 **${score}%**。目前的阻力並非障礙，而是宇宙在提醒您重新校準核心。只要在 Q3 之前完成特定的環境優化，這份摩擦力將轉化為 2026 年最強大的噴發推進力。`;
+        if (score >= 90) return `目前您的頻率與 2026 宇宙流年的對齊程度顯示為 **${score}%**。這是一個極為罕見的「深度共振」狀態。意圖已與顯化動能高度同步，只要保持目標視覺化，顯化將自動匯聚。`;
+        if (score >= 75) return `目前您的頻率對齊程度顯示為 **${score}%**。這代表靈魂慣性與 2026 年之間存在特定的「擴張紅利」。建議在 Q2 結束前完成斷捨離，這能將對齊率直接推向巔峰。`;
+        return `偵測到頻率中存在特定的「動能摩擦」，對齊度為 **${score}%**。目前的阻力並非障礙，而是提醒您重新校準。只要在 Q3 之前完成環境優化，這份摩擦力將轉化為最強大的推進力。`;
     }
 
     function 生成流年引言(y) {
@@ -255,16 +290,20 @@
             1: "這是一個關於「破殼與新生」的開創年。所有沈睡的種子都將在此刻甦醒。",
             2: "這是一個關於「和諧與深度連結」的磨合年。柔性將是您今年最強大的武器。",
             3: "這是一個關於「創意綻放與表達」的爆發年。您的靈魂正被丙午火年點燃。",
-            4: "這是一個關於「地基穩固與承諾」的扎根年。您的專業地位將在今年固化。",
-            5: "這是一個關於「自由跨度與變革」的轉向年。主動打破框架將迎來新生。",
-            6: "這是一個關於「責任與美感修復」的奉獻年。您的影響力將轉化為慈悲。",
-            7: "這是一個關於「智慧覺醒與內省」的真理年。在安靜中您將看穿趨勢。",
-            8: "這是一個關於「因果顯化與豐盛」的收成年。過去九年的佈局將在此刻豐收。",
-            9: "這是一個關於「大圓滿與靈魂清理」的重生年。為下一個巔峰騰出位子。"
+            8: "這是一個關於「因果顯化與豐盛」的收成年。過去九年的佈局將在此刻豐收。"
         };
         return flowWords[y] || "這是一個關於「對齊與顯化」的轉折年。";
     }
- // --- 【旗艦核心執行引擎：具備「殊途同歸」自動分流功能】 ---
+
+    // --- 📥 4. 【主理人測試神器：讓輸入區重新顯化】 ---
+    function 回到輸入() {
+        document.getElementById('inputSection').style.display = 'block';
+        document.getElementById('報告區域').style.display = 'none';
+        // 自動捲動回頂部，搭配自動填入功能，測試效率極高
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // --- 🚀 5. 【旗艦執行引擎：數據運算、儲存、同步】 ---
     function 啟動解析() {
         const btn = document.querySelector('.主按鈕');
         if(btn.innerText === "分析中...") return;
@@ -276,11 +315,20 @@
         
         if(!name || bday.length !== 8) { alert("請填寫姓名與 8 碼生日 (YYYYMMDD)"); return; }
 
+        // 📥 【核心升級：記憶存儲】存入瀏覽器 localStorage
+        localStorage.setItem('yy_name', name);
+        localStorage.setItem('yy_email', email);
+        localStorage.setItem('yy_line', lineId);
+        localStorage.setItem('yy_bday', bday);
+
         btn.innerText = "分析中...";
         btn.style.opacity = "0.5";
 
-        // 1. 基礎數值運算
-        function 加法(n) { let s = n.toString().split('').map(Number).reduce((a, b) => a + b, 0); return s > 9 ? 加法(s) : (s || 9); }
+        // 1. 靈數基礎運算邏輯
+        function 加法(n) { 
+            let s = n.toString().split('').map(Number).reduce((a, b) => a + b, 0); 
+            return s > 9 ? 加法(s) : (s || 9); 
+        }
         let mm = parseInt(bday.substring(4, 6)); 
         let dd = parseInt(bday.substring(6, 8));
         let yearNum = 加法(2026 + mm + dd); 
@@ -293,59 +341,44 @@
         const flow = ActionDB[yearNum] || ActionDB[1];
         const isPaid = new URLSearchParams(window.location.search).get('status') === 'paid';
 
-        // 2. 【核心優化：深度分流算法】確保 0116 與 1214 完全不同
-        let pathModifier = "";
-        let hiddenTalent = "";
-        let crystalBoost = "";
-
+        // 2. 【核心優化：深度分流算法】確保 0116 與 1214 的細微差異化
+        let pathModifier = ""; let hiddenTalent = ""; let crystalBoost = "";
         if (dd % 2 === 0) { 
-             if (dd > 15) { // 命中 0116
-                 pathModifier = "主理人觀測到您 2026 的成功來自於『美學與責任』的平衡。您天生具備 6 號的和諧頻率，這讓您的星金能量不再冷酷，而是充滿了引領他人的溫暖光輝。";
-                 hiddenTalent = "【隱藏天天賦：高階協調力】您能在對抗的環境中尋找共識點，是團隊的靈魂調解者。";
-                 crystalBoost = "主理人建議：在辦公桌左側放置一顆「粉晶球」，可柔化火年的剛燥，為您招來優質的人緣資產。";
-             } else { // 命中 1214
-                 pathModifier = "您的顯化路徑由『紀律與實力』構築而成。受 4 號能量守護，您在 2026 丙午火年中展現出驚人的抗壓性與系統化思考，這讓您的領袖之路走得比他人更加沈穩。";
-                 hiddenTalent = "【隱藏天賦：系統化架構力】您能將混亂的資訊轉化為可執行的藍圖，是天生的幕後操盤手。";
-                 crystalBoost = "主理人建議：隨身配戴一塊「黑曜石」牌，這能協助您吸納火年不必要的負面能量干擾，固化您的財富地基。";
+             if (dd > 15) { 
+                 pathModifier = "成功來自於『美學與責任』的平衡。您具備 6 號的和諧頻率，這讓您的星金能量充滿引領他人的溫暖光輝。";
+                 hiddenTalent = "【隱藏天賦：高階協調力】您是團隊的靈魂調解者。";
+                 crystalBoost = "建議在辦公桌左側放置一顆「粉晶球」，可柔化火年剛燥，招來優質人緣。";
+             } else { 
+                 pathModifier = "顯化路徑由『紀律與實力』構築。受 4 號能量守護，您在丙午火年中展現出驚人的抗壓性。";
+                 hiddenTalent = "【隱藏天賦：系統化架構力】您能將混亂資訊轉化為可執行的藍圖。";
+                 crystalBoost = "隨身配戴「黑曜石」牌，協助吸納火年負能量，固化財富地基。";
              }
         } else {
-             pathModifier = "您的顯化路徑來自於『獨立與開創』的噴發感。不需依賴他人，您的直覺就是最好的導航。";
+             pathModifier = "顯化路徑來自於『獨立與開創』的噴發感。不需依賴他人，您的直覺就是最好的導航。";
              hiddenTalent = "【隱藏天賦：先鋒破局力】您具備在迷霧中開闢新路徑的天賦。";
-             crystalBoost = "主理人建議：配戴「金髮晶」，增強您的決斷力，確保在火年捕捉到最大獲利點。";
+             crystalBoost = "配戴「金髮晶」，增強您的決斷力，確保捕捉最大獲利點。";
         }
 
-        // 3. 數據計算
-        let alignScore = 82 + (peak * 1.2) + (dd % 7);
-        if(alignScore > 98) alignScore = 98;
+        // 3. 年度對齊分數計算
+        let alignScore = Math.min(98, 82 + (peak * 1.2) + (dd % 7));
         const sub1 = (alignScore - 2.5).toFixed(1);
         const sub2 = (alignScore + 1.2).toFixed(1);
         const sub3 = ((100 - alignScore) / 4.5).toFixed(1);
 
-       // --- 4. 外發同步 (Make.com 旗艦全數據版) ---
-fetch(webAppUrl, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ 
-        name: name, 
-        email: email, 
-        birthday: bday, 
-        lineId: lineId, 
-        status: isPaid ? "已付費" : "未付款", 
-        peakNum: peak, 
-        yearNum: yearNum,
-        // --- 以下是新增的後半部數據數據 ---
-        element: soul.el,        // 對應表格 I 欄 (元素)
-        l3_0: l3[0],             // 對應表格 J 欄 (金字塔數據)
-        l3_1: l3[1],             // 對應表格 K 欄
-        l2_0: l2[0],             // 對應表格 L 欄
-        l2_1: l2[1],             // 對應表格 M 欄
-        l2_2: l2[2],             // 對應表格 N 欄
-        l2_3: l2[3],             // 對應表格 O 欄
-        report: soul.a           // 對應表格 Q 欄 (2000字深度解析)
-    })
-}).catch(err => console.error("同步失敗:", err));
-
-        // 5. 渲染 HTML (CH01-CH09)
+        // --- 4. 【雲端同步：Make.com 全數據版】 ---
+        fetch(webAppUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                name, email, birthday: bday, lineId, 
+                status: isPaid ? "已付費" : "未付款", 
+                peakNum: peak, yearNum, element: soul.el, 
+                l3_0: l3[0], l3_1: l3[1], 
+                l2_0: l2[0], l2_1: l2[1], l2_2: l2[2], l2_3: l2[3],
+                report: soul.a 
+            })
+        }).catch(err => console.error("雲端同步失敗:", err));
+// --- 6. 渲染 HTML 內容 (第一至九章：基礎報告內容) ---
         let html = `
             <div class="章節卡片">
                 <div class="章節標題"><span>第一章：靈魂原型診斷</span><span class="序號">PAGE 01</span></div>
@@ -403,32 +436,40 @@ fetch(webAppUrl, {
                 </div>
             </div>
         `;
-
+// --- 7. 處理付費區域分流 (已支付顯示內容，未支付顯示購買介紹) ---
         let paidContent = `
-            <div class="章節卡片"><div class="尊享標籤">2026 旗艦落地版</div><div class="章節標題"><span>第十章：2026 顯化月曆</span></div>
-            <table class="顯化月曆">
-                <tr><th>季度</th><th>年度重心</th><th>建議行動</th><th>覺察提醒</th></tr>
-                ${flow.cal.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td style="color:var(--提示藍); font-weight:bold;">${r[3]}</td></tr>`).join('')}
-            </table></div>
-            <div class="章節卡片"><div class="章節標題"><span>第十一章：五維度落地深度解析</span></div>
-                <span class="子標題">事業策略指引</span><div class="解析本文">${flow.c}</div>
-                <span class="子標題">財富獲利規劃</span><div class="解析本文">${flow.w}</div>
-                <span class="子標題">情感對位關係</span><div class="解析本文">${flow.e}</div>
-                <span class="子標題">家族能量整合</span><div class="解析本文">${flow.f}</div>
-                <span class="子標題">身心頻率養護</span><div class="解析本文">${flow.b}</div>
+            <div class="章節卡片">
+                <div class="尊享標籤">2026 旗艦落地版</div>
+                <div class="章節標題"><span>第十章：2026 顯化月曆</span><span class="序號">PAGE 10</span></div>
+                <div class="解析本文" style="margin-bottom:20px; opacity:0.8;">主理人特別標註：以下為您 2026 年的核心能量轉折點，請務必掌握季度重心。</div>
+                <table class="顯化月曆">
+                    <tr><th>季度</th><th>年度重心</th><th>建議行動</th><th>覺察提醒</th></tr>
+                    ${flow.cal.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td style="color:var(--提示藍); font-weight:bold;">${r[3]}</td></tr>`).join('')}
+                </table>
+            </div>
+
+            <div class="章節卡片">
+                <div class="章節標題"><span>第十一章：五維度落地深度解析</span><span class="序號">PAGE 11</span></div>
+                <span class="子標題">✦ 事業策略指引</span><div class="解析本文">${flow.c}</div>
+                <span class="子標題">✦ 財富獲利規劃</span><div class="解析本文">${flow.w}</div>
+                <span class="子標題">✦ 情感對位關係</span><div class="解析本文">${flow.e}</div>
+                <span class="子標題">✦ 家族能量整合</span><div class="解析本文">${flow.f}</div>
+                <span class="子標題">✦ 身心頻率養護</span><div class="解析本文">${flow.b}</div>
             </div>
         `;
 
         let payWall = `
             <div class="支付牆">
                 <div style="color:var(--雲漾金); font-size:28px; font-weight:bold; letter-spacing:6px; margin-bottom:20px;">✦ 啟動您的 2026 年度旗艦全書 ✦</div>
-                <div class="解析本文" style="text-align:center; opacity:0.85; margin-bottom:35px;">親愛的主理人 ${name}，您的生日頻率顯示 ${dd > 15 ? '美學' : '實力'} 是您今年的關鍵詞。</div>
+                <div class="解析本文" style="text-align:center; opacity:0.85; margin-bottom:35px;">親愛的主理人 ${name}，您的生日頻率顯示 ${dd > 15 ? '「美學與責任」' : '「紀律與實力」'} 是您今年的成功關鍵字。</div>
+                
                 <div style="text-align:left; max-width:460px; margin:0 auto; font-size:16px; color:#d5d5d5; line-height:2.4;">
                     <p>✦ <strong>12 個月顯化月曆</strong>：主理人標註年度核心能量轉折點。</p>
-                    <p>✦ <strong>五維度落地解析</strong>：針對事業、財富的具體實戰指引。</p>
-                    <p>✦ <strong>主理人校準報告</strong>：針對地基數據的 2000 字深度解析。</p>
-                    <p>✦ <strong>全額折抵權益</strong>：NT$ 600 可全額折抵雲漾官網水晶消費。</p>
+                    <p>✦ <strong>五維度落地解析</strong>：針對事業、財富、情感、家族與身心的具體指引。</p>
+                    <p>✦ <strong>主理人校準報告</strong>：解鎖資料庫中針對您個人地基數據的 2000 字深度長文。</p>
+                    <p>✦ <strong>全額折抵權益</strong>：解鎖本全書之 <span style="color:var(--雲漾金); font-weight:bold;">NT$ 600 將自動轉為您的「能量抵用金」</span>，可於雲漾官網全額折抵。</p>
                 </div>
+
                 <span class="現價">NT$ 600</span>
                 <a href="${ECPayURL}" target="_blank" class="按鈕 強調" style="margin-bottom:20px;">立即支付並完成全書校準</a>
             </div>
@@ -437,91 +478,92 @@ fetch(webAppUrl, {
         const area = document.getElementById('報告區域');
         area.innerHTML = html + (isPaid ? paidContent : payWall) + `
             <div style="margin-top:60px; display:grid; gap:25px;">
+                <button onclick="回到輸入()" class="按鈕" style="border-color: var(--提示藍); color: var(--提示藍); background: none;">✦ 修改資料 / 測試新生日數據</button>
                 <a href="https://lin.ee/Nsksu05" target="_blank" class="按鈕 強調">💬 預約主理人一對一能量諮詢</a>
                 <a href="https://yunyangjewelry.com/" target="_blank" class="按鈕">🌐 進入雲漾官網探索年度水晶</a>
             </div>
         `;
-        area.style.display = 'block'; document.getElementById('inputSection').style.display = 'none';
+
+        area.style.display = 'block'; 
+        document.getElementById('inputSection').style.display = 'none';
         window.scrollTo({ top: area.offsetTop, behavior: 'smooth' });
         
         btn.innerText = "啟動 2026 年度靈魂診斷";
         btn.style.opacity = "1";
 
-        setTimeout(() => { const pb = document.getElementById('progressBar'); if (pb) pb.style.width = alignScore + "%"; }, 400);
+        // 啟動進度條動畫
+        setTimeout(() => { 
+            const pb = document.getElementById('progressBar'); 
+            if (pb) pb.style.width = alignScore + "%"; 
+        }, 400);
     }
-// --- 【第 12 章：支付完成後的自動化對接與雲端數據調取邏輯】 ---
+// --- 8. 【頁面初始化：讀取記憶 + 支付成功自動對位】 ---
     window.onload = function() {
+        // 📤 讀取瀏覽器記憶並自動填入
+        // 讓測試或重複使用的客戶「一秒進入狀態」，專業感十足
+        if(localStorage.getItem('yy_name')) {
+            document.getElementById('姓名').value = localStorage.getItem('yy_name');
+            document.getElementById('電子信箱').value = localStorage.getItem('yy_email');
+            document.getElementById('LINE').value = localStorage.getItem('yy_line');
+            document.getElementById('生日碼').value = localStorage.getItem('yy_bday');
+        }
+
+        // 偵測是否為支付成功後的跳轉 (帶有 status=paid 與 row 參數)
         const params = new URLSearchParams(window.location.search);
-        const row = params.get('row'); // 獲取資料庫列編號
-        const status = params.get('status'); // 偵測是否為支付成功跳轉
+        const row = params.get('row'); 
+        const status = params.get('status'); 
 
         if (status === 'paid' && row) {
-            // 1. 隱藏初始輸入介面，顯示極致高級的載入動畫
+            // 隱藏初始輸入介面，顯示高級載入狀態
             document.getElementById('inputSection').style.display = 'none';
             const area = document.getElementById('報告區域');
             area.style.display = 'block';
             area.innerHTML = `
                 <div class="章節卡片" style="text-align:center; padding: 150px 20px; border: 1px solid var(--雲漾金);">
                     <div style="color:var(--雲漾金); font-size:32px; margin-bottom:30px; letter-spacing:8px; font-weight:bold;">✦ 支付校準成功 ✦</div>
-                    <div class="解析本文" style="text-align:center; opacity:0.8; line-height:2.2;">
-                        尊貴的主理人，系統已確認您的身分代碼。<br>
-                        正在從雲漾深度智庫中調取您的「2026 年度專屬旗艦全書」。<br>
-                        這份報告包含主理人親自校準的 2000 字深度長文，請稍候片刻...
-                    </div>
+                    <div class="解析本文" style="text-align:center; opacity:0.8;">正在從雲漾深度智庫中調取您的「2026 年度專屬旗艦全書」...</div>
                 </div>
             `;
 
-            // 2. 向您的 Webhook 請求該使用者的深度解析長文內容
+            // 向 Webhook 請求該使用者的 2000 字深度解析 (表格 Q 欄內容)
             fetch(`${webAppUrl}?row=${row}`)
                 .then(res => res.text())
                 .then(reportContent => {
-                    // 自動從 URL 獲取基本資訊填入欄位，以便重新啟動 1-11 章的拼裝渲染
+                    // 自動填入參數並啟動解析引擎，重建前 11 章
                     document.getElementById('姓名').value = decodeURIComponent(params.get('name') || "尊貴的主理人");
                     document.getElementById('生日碼').value = params.get('birthday') || "";
-                    
-                    // 執行核心引擎，重建完整的前 11 章背景資料
                     啟動解析(); 
 
-                    // 3. 創建並動態注入「第十二章：主理人深度校準全書」
+                    // 華麗注入最終章 - 第十二章：主理人深度校準全書
                     const box12 = document.createElement('div');
                     box12.className = '章節卡片';
-                    box12.style.border = "2px solid var(--雲漾金)"; // 加強邊框，突顯付費價值
+                    box12.style.border = "2px solid var(--雲漾金)";
                     box12.style.boxShadow = "0 0 50px rgba(212,180,131,0.2)";
                     box12.innerHTML = `
                         <div class="尊享標籤" style="background:var(--特惠紅); color:#fff; padding: 6px 15px;">2026 旗艦版限定</div>
-                        <div class="章節標題"><span>第十二章：主理人深度校準全書</span></div>
+                        <div class="章節標題"><span>第十二章：主理人深度校準全書</span><span class="序號">PAGE 12</span></div>
                         <div class="解析本文" style="white-space: pre-wrap; font-size:17.5px; line-height:2.6; color:#e8e8e8; padding-top:10px;">${reportContent}</div>
                         
                         <div style="background: linear-gradient(135deg, rgba(212, 180, 131, 0.15), rgba(0,0,0,0.4)); border: 1px dashed var(--雲漾金); padding: 60px 40px; margin-top: 100px; text-align: center; border-radius:2px;">
                             <div style="color: var(--雲漾金); font-size: 26px; font-weight: bold; letter-spacing: 4px;">✦ 您的年度能量基金已生效 ✦</div>
                             <div class="解析本文" style="text-align: center; margin: 25px 0; color:#fff; opacity:0.9;">
-                                親愛的主理人，這份報告不僅是您的導航，更是雲漾對您的祝福。<br>
                                 您本次的校準費用 <strong style="color:var(--雲漾金); font-size:24px;">NT$ 600</strong> 已全數轉為能量抵用金。<br>
                                 <span style="font-size:14px; opacity:0.7;">（領取方式：請截圖此畫面並私訊您的專屬能量諮詢師）</span>
                             </div>
                             <div style="margin-top:40px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
-                                <a href="https://yunyangjewelry.com/" target="_blank" class="按鈕 強調" style="width:300px;">進入官網挑選年度守護水晶</a>
+                                <a href="https://yunyangjewelry.com/" target="_blank" class="按鈕 強調" style="width:300px;">進入官網挑選年度水晶</a>
                                 <a href="https://lin.ee/Nsksu05" target="_blank" class="按鈕" style="width:300px;">聯繫諮詢師領取折抵券</a>
                             </div>
                         </div>
                     `;
-                    // 將第十二章長篇內容掛載到報告區域的最底端
                     area.appendChild(box12);
-                    
-                    // 自動滾動到報告起點，提供最流暢的閱讀體驗
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 })
                 .catch(err => {
                     console.error("調取雲端報告失敗：", err);
-                    area.innerHTML = `
-                        <div class="章節卡片" style="text-align:center;">
-                            <div style="color:var(--特惠紅); font-size:20px;">報告生成中，請稍候 30 秒後重新整理頁面。</div>
-                            <div class="解析本文" style="text-align:center; margin-top:15px;">若持續無法顯示，請憑支付截圖聯繫主理人手動調取。</div>
-                        </div>
-                    `;
+                    area.innerHTML = `<div class="章節卡片" style="text-align:center;">調取失敗，請聯繫主理人手動對位。</div>`;
                 });
         }
     };
 </script>
 </body>
-</html>
