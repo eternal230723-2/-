@@ -65,6 +65,37 @@
         .水晶標題 { color: var(--雲漾金); font-size: 20px; font-weight: bold; display: block; margin-bottom: 10px; border-bottom: 1px solid var(--線條金); padding-bottom: 10px; }
 
         @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- 手機版專屬校準 (修正標題斷行與卡片太窄) --- */
+        @media (max-width: 600px) {
+            .容器 { padding: 30px 15px; } 
+            h1 { font-size: 19px; letter-spacing: 3px; }
+
+            /* 核心修正：將標題改為垂直排列，防止重疊 */
+            .章節標題 { 
+                font-size: 17px; 
+                flex-direction: column; 
+                align-items: flex-start;
+                gap: 8px; 
+                letter-spacing: 1.5px;
+                padding-bottom: 15px;
+            }
+            .章節標題 span:last-child { align-self: flex-end; font-size: 12px; opacity: 0.6; }
+
+            .章節卡片 { padding: 25px 15px; margin-bottom: 20px; }
+            .解析本文 { font-size: 15.5px; line-height: 2.0; }
+
+            /* 表格橫向滑動：防止撐破網頁 */
+            .表格容器 { 
+                overflow-x: auto; 
+                -webkit-overflow-scrolling: touch; 
+                margin-top: 20px; 
+                border: 1px solid var(--線條金);
+                background: rgba(255,255,255,0.02);
+            }
+            .顯化月曆 { min-width: 500px; font-size: 13px; }
+            .支付牆 { padding: 35px 20px; }
+        }
     </style>
 </head>
 <body>
@@ -442,10 +473,12 @@
                 <div class="尊享標籤">2026 旗艦落地版</div>
                 <div class="章節標題"><span>第十章：2026 顯化月曆</span><span class="序號">PAGE 10</span></div>
                 <div class="解析本文" style="margin-bottom:20px; opacity:0.8;">主理人特別標註：以下為您 2026 年的核心能量轉折點，請務必掌握季度重心。</div>
-                <table class="顯化月曆">
-                    <tr><th>季度</th><th>年度重心</th><th>建議行動</th><th>覺察提醒</th></tr>
-                    ${flow.cal.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td style="color:var(--提示藍); font-weight:bold;">${r[3]}</td></tr>`).join('')}
-                </table>
+                <div class="表格容器">
+                    <table class="顯化月曆">
+                        <tr><th>季度</th><th>年度重心</th><th>建議行動</th><th>覺察提醒</th></tr>
+                        ${flow.cal.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td style="color:var(--提示藍); font-weight:bold;">${r[3]}</td></tr>`).join('')}
+                    </table>
+                </div>
             </div>
 
             <div class="章節卡片">
@@ -460,18 +493,22 @@
 
         let payWall = `
             <div class="支付牆">
-                <div style="color:var(--雲漾金); font-size:28px; font-weight:bold; letter-spacing:6px; margin-bottom:20px;">✦ 啟動您的 2026 年度旗艦全書 ✦</div>
+                <div style="color:var(--雲漾金); font-size:26px; font-weight:bold; letter-spacing:4px; margin-bottom:20px;">✦ 啟動您的 2026 年度旗艦全書 ✦</div>
                 <div class="解析本文" style="text-align:center; opacity:0.85; margin-bottom:35px;">親愛的主理人 ${name}，您的生日頻率顯示 ${dd > 15 ? '「美學與責任」' : '「紀律與實力」'} 是您今年的成功關鍵字。</div>
                 
                 <div style="text-align:left; max-width:460px; margin:0 auto; font-size:16px; color:#d5d5d5; line-height:2.4;">
-                    <p>✦ <strong>12 個月顯化月曆</strong>：主理人標註年度核心能量轉折點。</p>
-                    <p>✦ <strong>五維度落地解析</strong>：針對事業、財富、情感、家族與身心的具體指引。</p>
-                    <p>✦ <strong>主理人校準報告</strong>：解鎖資料庫中針對您個人地基數據的 2000 字深度長文。</p>
-                    <p>✦ <strong>全額折抵權益</strong>：解鎖本全書之 <span style="color:var(--雲漾金); font-weight:bold;">NT$ 600 將自動轉為您的「能量抵用金」</span>，可於雲漾官網全額折抵。</p>
+                    <p>✦ <strong>12 個月顯化月曆</strong>：主理人標註年度能量轉折點，教您在正確的時間點「精準落地」。</p>
+                    <p>✦ <strong>五維度落地指引</strong>：針對事業、財富、情感、家族與身心，提供最具實踐性的 2026 落地方案。</p>
+                    <p>✦ <strong>主理人校準報告</strong>：解鎖 2000 字深度長文，詳解如何將您的靈魂天賦具體化為 2026 的實體成果。</p>
+                    <p>✦ <strong>全額折抵權益</strong>：今日解鎖本全書之 <span style="color:var(--雲漾金); font-weight:bold;">NT$ 600 將自動轉為您的「能量抵用金」</span>。</p>
+                </div>
+
+                <div style="margin: 30px 0; padding: 20px; border: 1px dashed var(--線條金); background: rgba(212,180,131,0.05);">
+                    <div style="color:var(--雲漾金); font-size:15px; letter-spacing:2px;"><strong>💡 主理人筆記：本全書的核心不在於預測未來，而在於教您如何「顯化落地」，將智慧真正轉化為成果。</strong></div>
                 </div>
 
                 <span class="現價">NT$ 600</span>
-                <a href="${ECPayURL}" target="_blank" class="按鈕 強調" style="margin-bottom:20px;">立即支付並完成全書校準</a>
+                <a href="${ECPayURL}" target="_blank" class="按鈕 強調" style="margin-bottom:20px;">立即支付並獲取落地執行方案</a>
             </div>
         `;
 
@@ -567,3 +604,4 @@
     };
 </script>
 </body>
+</html>
