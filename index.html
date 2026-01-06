@@ -321,8 +321,29 @@
         const sub2 = (alignScore + 1.2).toFixed(1);
         const sub3 = ((100 - alignScore) / 4.5).toFixed(1);
 
-        // 4. 外發同步 (Make.com)
-        if(!isPaid) { fetch(webAppUrl, { method: 'POST', mode: 'no-cors', body: JSON.stringify({ name, email, birthday: bday, lineId, status: "未付款", peakNum: peak, yearNum: yearNum }) }); }
+       // --- 4. 外發同步 (Make.com 旗艦全數據版) ---
+fetch(webAppUrl, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ 
+        name: name, 
+        email: email, 
+        birthday: bday, 
+        lineId: lineId, 
+        status: isPaid ? "已付費" : "未付款", 
+        peakNum: peak, 
+        yearNum: yearNum,
+        // --- 以下是新增的後半部數據數據 ---
+        element: soul.el,        // 對應表格 I 欄 (元素)
+        l3_0: l3[0],             // 對應表格 J 欄 (金字塔數據)
+        l3_1: l3[1],             // 對應表格 K 欄
+        l2_0: l2[0],             // 對應表格 L 欄
+        l2_1: l2[1],             // 對應表格 M 欄
+        l2_2: l2[2],             // 對應表格 N 欄
+        l2_3: l2[3],             // 對應表格 O 欄
+        report: soul.a           // 對應表格 Q 欄 (2000字深度解析)
+    })
+}).catch(err => console.error("同步失敗:", err));
 
         // 5. 渲染 HTML (CH01-CH09)
         let html = `
